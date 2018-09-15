@@ -28,7 +28,7 @@
 									<td><c:out value="${mining.score}" /></td>
 									<td><ul>
 											<li><a
-												href="/admin/user-info?id=${sale.user.id}">${sale.user.name}</a></li>
+												href="/admin/user/info?id=${sale.user.id}">${sale.user.name}</a></li>
 											<li>${sale.user.phoneNum}</li>
 										</ul></td>
 									<td><ul>

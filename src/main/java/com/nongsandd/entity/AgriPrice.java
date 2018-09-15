@@ -13,6 +13,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 /**
 *@author HiepLe
 *@version 1.0 Dec 23, 2017
@@ -20,23 +24,11 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Agri_Price")
+@Getter
+@Setter
+@NoArgsConstructor
 public class AgriPrice implements Serializable{
-
-    /**
-     * 
-     */
-    private static final long serialVersionUID = 1L;  
-
-    public AgriPrice(float price, float priceChange, Date date, Agriculture agriculture) {
-		super();
-		this.price = price;
-		this.priceChange = priceChange;
-		this.date = date;
-		this.agriculture = agriculture;
-	}
-
-    public AgriPrice() {
-	}
+	private static final long serialVersionUID = 1L;  
     
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -56,46 +48,11 @@ public class AgriPrice implements Serializable{
     @JoinColumn(name = "agriID", referencedColumnName = "id")
     private Agriculture agriculture;
 
-    public float getPriceChange() {
-		return priceChange;
-	}
-
-	public void setPriceChange(float priceChange) {
+	public AgriPrice(float price, float priceChange, Date date, Agriculture agriculture) {
+		super();
+		this.price = price;
 		this.priceChange = priceChange;
+		this.date = date;
+		this.agriculture = agriculture;
 	}
-
-	public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public float getPrice() {
-        return price;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public Agriculture getAgriculture() {
-        return agriculture;
-    }
-
-    public void setAgriculture(Agriculture agriculture) {
-        this.agriculture = agriculture;
-    }
-    
-    
-
 }

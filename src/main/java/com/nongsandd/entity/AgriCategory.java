@@ -14,6 +14,10 @@ import javax.persistence.Table;
 
 import com.nongsandd.constant.Constant;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 /**
 *@author HiepLe
 *@version 1.0 Dec 17, 2017
@@ -21,11 +25,10 @@ import com.nongsandd.constant.Constant;
 
 @Entity
 @Table(name="Agri_Category")
+@Getter
+@Setter
+@NoArgsConstructor
 public class AgriCategory implements Serializable{
-
-    /**
-     * 
-     */
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,25 +50,4 @@ public class AgriCategory implements Serializable{
 		super();
 		this.id = id;
 	}
-
-	public AgriCategory() {
-		super();
-	}
-
-	public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
 }

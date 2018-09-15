@@ -3,13 +3,19 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="security"%>
-<%@ include file = "form_page/page-head.jsp" %>
+<c:if test="${role == all}"><jsp:include page="form_page/page-head.jsp"></jsp:include></c:if>
+<c:if test="${role == user}">
+	<jsp:include page="form_page/user-head.jsp"></jsp:include>
+</c:if>
+<c:if test="${role == trader}">
+	<jsp:include page="form_page/trader-head.jsp"></jsp:include>
+</c:if>
 <div class=container style="padding-top: 30px">
 	<div id="line-example">
 		<label style="text-align: center">So Sánh Với: </label> 
 		<select data-style="btn-primary" id="compare_select" style="width: 150px; margin-bottom: 14px;" 
 			data-placeholder="Chọn Nông Sản">
-			<option selected disabled>Chọn</option>
+			<option selected value="-1">Chọn</option>
 			<c:forEach var="category" items="${agriCategories}">
 				<optgroup label="${category.name }">
 					<c:forEach var="agri" items="${agris}">
@@ -50,7 +56,7 @@ $(function () {
 		series: [{
 			data: ${agriPrices},
 			name: "${currAgriName}",
-		    pointStart: Date.UTC(2010, 0, 1),
+		    pointStart: Date.UTC(2018, 8, 14),
 		    pointInterval: 24 * 3600 * 1000 // one day
 		}]
 	});
@@ -65,14 +71,14 @@ $(document).ready(function(){
 				data : {
 					"id" : idSelected
 				},
-				url : "/lay-ds-gia",
+				url : "/gia/so-sanh",
 				type : "get",
 
 				success : function(data) {
 					chart.addSeries({
 				        data: data,
 				        name: $option.text(),
-				        pointStart: Date.UTC(2010, 0, 1),
+				        pointStart: Date.UTC(2018, 8, 14),
 					    pointInterval: 24 * 3600 * 1000 // one day
 				    });
 				}
@@ -80,6 +86,7 @@ $(document).ready(function(){
 			
 			$('option:selected', this).remove();
 			$("#compare_select").trigger('chosen:updated');
+			$('#compare_select option[value=-1]').attr('selected','selected');
 		}
 	})
 })

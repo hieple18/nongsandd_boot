@@ -3,7 +3,13 @@
 <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="security"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<c:if test="${role == all}"><jsp:include page="form_page/page-head.jsp"></jsp:include></c:if>
+<c:if test="${role == user}">
+	<jsp:include page="form_page/user-head.jsp"></jsp:include>
+</c:if>
+<c:if test="${role == trader}">
+	<jsp:include page="form_page/trader-head.jsp"></jsp:include>
+</c:if>
 <%@ include file = "form_page/page-head.jsp" %>
 <div class="price_container container">
 	<div>
@@ -35,7 +41,7 @@
  				<c:forEach var="price" items="${agriPrices}">
 					<tr>
 					<td scope="row">${price.id}</td>
-					<td scope="row"><a href="/bieu-do-gia?id=${price.id}" class="link_h" style="font-weight: bold; color: #577903" data="${price.id}">
+					<td scope="row"><a href="/gia/bieu-do?id=${price.id}" class="link_h" style="font-weight: bold; color: #577903" data="${price.id}">
 						${price.name}</a></td>
 					<td>${price.price}</td>
 					<c:choose>
@@ -66,12 +72,12 @@
 $(document).ready(function() {
 	
 
-	/* $('#price_datepicker').datetimepicker({
+	$('#price_datepicker').datetimepicker({
 		format : 'YYYY-MM-DD',
 		defaultDate : new Date(),
 		maxDate : moment(),
-		minDate : "${minDate}"
-	}); */
+		minDate : "2018/8/20"
+	}); 
 	
 	/* price-list.js */
 	$('#price_table').DataTable({

@@ -104,8 +104,8 @@
 							class="menu-arrow arrow_carrot-right"></span>
 					</a>
 						<ul class="sub">
-							<li><a href="/admin/price-add">Thêm</a></li>
-							<li><a href="/admin/price-update">Cập Nhập</a></li>
+							<li><a href="/admin/price/add">Thêm</a></li>
+							<li><a href="/admin/price/update">Cập Nhập</a></li>
 						</ul></li>
 
 					<li class="sub-menu"><a href="javascript:;" class=""> <i
@@ -113,12 +113,12 @@
 							class="menu-arrow arrow_carrot-right"></span>
 					</a>
 						<ul class="sub">
-							<li><a href="/admin/add-trader-phone">Thêm SDT</a></li>
-							<li><a href="/admin/add-trader">Thêm mới</a></li>
-							<li><a href="/admin/wait-to-register">Chờ
+							<li><a href="/admin/trader/phone/add">Thêm SDT</a></li>
+							<li><a href="/admin/trader/add">Thêm mới</a></li>
+							<li><a href="/admin/trader/phone/list">Chờ
 									xác nhận</a></li>
 						</ul></li>
-					<li><a class="" href="/admin/sale-expired"> <i class="icon_table"></i>
+					<li><a class="" href="/admin/sale/expired"> <i class="icon_table"></i>
 							<span>Cập nhập tin bán</span>
 					</a></li>
 				</ul>

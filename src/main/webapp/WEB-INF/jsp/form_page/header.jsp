@@ -16,8 +16,7 @@
 
 				<div class="col-md-4 col-sm-12 col-xs-12" style="float: right">
 					<div class="autor">
-						<a href="/NongSanDD/NguoiDung">Đăng nhập</a>
-						<a href="/NongSanDD/TempND/dang-ki-tk">Tạo Tài Khoản</a>
+						<a class="first-login" href="/NguoiDung">Đăng nhập</a>
 					</div>
 				</div>
 			</div>
@@ -29,31 +28,38 @@
 
 <!-- Menu ******************************* -->
 <div class="theme_menu color1_bg">
-	<div class="container" style="height: 50px;">
+	<div class="container">
 		<nav class="menuzord pull-left" id="main_menu">
 			<ul class="menuzord-menu">
-				<li id="price-page"><a href="/NongSanDD/gia-hom-nay?page=1">Danh Sách Giá</a></li>
-				<li id="list-page"><a href="/NongSanDD/ds-nha-buon">DS Nhà Buôn</a></li>
-				<li><a href="#">Nhà Buôn</a>
-					<ul class="dropdown">
-						<li><a href="/NongSanDD/NhaBuon">Đăng Nhập</a></li>
-						<li><a href="/NongSanDD/TempNB/yc-xac-thuc-sdt">Tạo Tài Khoản</a></li>
-					</ul></li>
+				<li id="price-page"><a href="/gia/hom-nay">Danh
+						Sách Giá</a></li>
+				<li id="list-page"><a href="/nha-buon/danh-sach">DS Nhà
+						Buôn</a></li>
 			</ul>
 			<!-- End of .menuzord-menu -->
 		</nav>
-
+		<div class="nav_side_content pull-right">
+			<ul class="icon_header">
+				<li class="border_round tran3s"><a href="https://www.facebook.com/hiep96.name" target="_blank"><i
+						class="fab fa-facebook-f"></i></a></li>
+				<li class="border_round tran3s"><a href="mailto:hiep96.uit@gmail.com" target="_blank"><i
+						class="far fa-envelope"></i></a></li>
+				<li class="border_round tran3s"><a href="#" target="_blank"><i
+						class="fas fa-info"></i></a></li>
+			</ul>
+		</div>
 		<!-- End of #main_menu -->
 
 	</div>
 	<!-- End of .conatiner -->
 </div>
+
 <script>
-var pathname = window.location.pathname;
-if(pathname.indexOf("gia-hom-nay") !== -1){
-	$("#price-page").addClass("current_page");
-}else if(pathname.indexOf("ds-nha-buon") !== -1){
-	$("#list-page").addClass("current_page");
-}
+	var pathname = window.location.pathname;
+	if (pathname.indexOf("gia-hom-nay") !== -1) {
+		$("#price-page").addClass("current_page");
+	} else if (pathname.indexOf("ds-nha-buon") !== -1) {
+		$("#list-page").addClass("current_page");
+	}
 </script>
 <!-- End of .theme_menu -->

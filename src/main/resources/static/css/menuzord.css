@@ -518,7 +518,8 @@ License: http://codecanyon.net/licenses
 		position: relative;
 	}
 	.menuzord-responsive .menuzord-menu ul.dropdown li a {
-		border-bottom: solid 1px #f0f0f0;
+		    border-bottom: solid 1px #4e4d4d;
+    background-color: #aadab7;
 	}
 	.menuzord-responsive .menuzord-menu.menuzord-indented>li>ul.dropdown>li>a
 		{

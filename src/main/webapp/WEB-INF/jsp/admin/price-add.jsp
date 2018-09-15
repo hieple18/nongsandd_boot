@@ -8,7 +8,7 @@
 	<section class="wrapper">
 		<div class="row">
 			<div style="width: 40%; margin: 50px auto 0">
-				<form:form action="/admin/create-price" method="post"
+				<form:form action="/admin/price/create" method="post"
 					modelAttribute="priceList">
 					<section class="panel">
 						<header class="panel-heading no-border"> Nông Sản </header>

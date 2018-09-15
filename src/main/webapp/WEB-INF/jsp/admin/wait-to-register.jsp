@@ -55,7 +55,7 @@
 			
 			<div class="modal-body">
 				<form class="form-horizontal form-label-left" id="updateAgriForm"
-					action="/admin/update-trader-phone" method="get">
+					action="/admin/trader/phone/update" method="get">
 					<input type="hidden" id="traderID" name="id">
 					<div class="form-group">
 						<label class="col-sm-2 control-label">SDT</label>
@@ -86,7 +86,7 @@
 	        opacity: 0.5,
 	        buttons: {
 	            'confirm': function (){
-	            	window.location.href = "/admin/delete-trader-phone?id=" + id;
+	            	window.location.href = "/admin/trader/phone/delete?id=" + id;
 	            	
 	            },
 	            cancel: function () {
@@ -134,27 +134,12 @@
 		$("#phone_update").val("");
 		$("#phone_update").focus();
 	}
-	
-	function verifyUserPhone(phone){
-		$.ajax({
-			type: "get",
-			data: {phoneNum: phone},
-			url: "/TempND/kiem-tra-sdt",
-			success: function(response){
-				if(response === true){
-					warningPhoneError('Số điện thoại đã được Nhà Nông đăng kí.');
-				}else{
-					verifyTraderPhone(phone);
-				}
-			}
-		});
-	}
 
 	function verifyTraderPhone(phone){
 		$.ajax({
 			type: "get",
 			data: {phoneNum : phone},
-			url: "/TempNB/kiem-tra-xt-sdt",
+			url: "/TempNB/",
 			success: function(response){
 				switch(response) {
 			    case -2:
